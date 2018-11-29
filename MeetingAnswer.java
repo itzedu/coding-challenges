@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Answer {
+public class MeetingAnswer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
