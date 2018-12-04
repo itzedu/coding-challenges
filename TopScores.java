@@ -1,7 +1,5 @@
 package hackerrank;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class TopScores {
@@ -42,8 +40,6 @@ public class TopScores {
     		}
     	}
     	
-    	System.out.println(scores);
-    	System.out.println(Arrays.toString(result));
         return result;
     }
 
