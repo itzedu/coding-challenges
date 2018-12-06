@@ -15,8 +15,8 @@ import java.util.List;
 public class DuplicateFiles {	
 	public static void main(String[] args) {
         List<File> files = new ArrayList<File>();
-		listf("/Users/eduardobaik/Desktop/rec/", files);
-		System.out.println(findDuplicates(files));
+        listf("<<your-path>>", files);
+        System.out.println(findDuplicates(files));
 	}
 
     public static List<List<File>> findDuplicates(List<File> files) {
@@ -65,5 +65,4 @@ public class DuplicateFiles {
     
     	return files;
     }
-
 }
