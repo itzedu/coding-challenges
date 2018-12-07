@@ -13,6 +13,7 @@ public class ReverseWordAnswer {
     	if(message.length == 0) {
     		return;
     	}
+    	
     	for(int i = 0; i < message.length / 2; i++) {
     		char temp = message[i];
     		message[i] = message[message.length - i - 1];
