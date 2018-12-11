@@ -27,6 +27,7 @@ public class ReverseWordAnswer {
     		int k = j;
 
         	while(message[j] != ' ') {
+        		
         		if(j == message.length - 1) {
         			j++;
         			break;
