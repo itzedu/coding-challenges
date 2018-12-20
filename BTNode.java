@@ -18,4 +18,9 @@ public class BTNode {
         this.right = new BTNode(rightValue);
         return this.right;
     }
+    
+    public static boolean isBalanced(BTNode treeRoot) {
+        // determine if the tree is superbalanced
+        return false;
+    }
 }
