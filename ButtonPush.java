@@ -8,7 +8,8 @@ public class ButtonPush {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		List<HashMap<String, Object>> input = new ArrayList<HashMap<String, Object>>();
+		List<HashMap<String, String>> input = new ArrayList<HashMap<String, String>>();
+		HashMap<String, String> action1 = new HashMap<String, String>();
 
 	}
 
