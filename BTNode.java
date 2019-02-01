@@ -20,12 +20,23 @@ public class BTNode {
     }
     
     public static int countDepth(BTNode node) {
-    	System.out.println(node.value);
     	if(node.left == null && node.right == null) {
     		return 1;
     	}
     	
-    	return 1 + countDepth(node.left) + countDepth(node.right);
+    	int leftHeight = 0;
+    	int rightHeight = 0;
+    	
+    	if(node.left != null && node.right == null) {
+    		leftHeight = countDepth(node.left);
+    	} else if(node.right != null && node.left == null) {
+    		rightHeight = countDepth(node.right);
+    	} else {
+    		leftHeight = countDepth(node.left);
+    		rightHeight = countDepth(node.right);
+    	}
+    
+    	return 1 + leftHeight + rightHeight;
     }
     
     public static boolean isBalanced(BTNode treeRoot) {
@@ -34,13 +45,21 @@ public class BTNode {
     	//  the difference between the depths of any two leaf nodes is no greater than one.
     	if(treeRoot == null) return true;
     	
-    	int leftDepth = countDepth(treeRoot.left);
-    	int rightDepth = countDepth(treeRoot.right);
+    	int leftDepth = 0;
+    	int rightDepth = 0;
     	
+    	if(treeRoot.left != null) {
+    		leftDepth = countDepth(treeRoot.left);
+    	}
+    	
+    	if(treeRoot.right != null) {
+    		rightDepth = countDepth(treeRoot.right);
+    	}
+
     	if(Math.abs(leftDepth - rightDepth) <= 1) {
     		return true;
-
     	}
+    	
         return false;
     }
 }
