@@ -39,37 +39,20 @@ public class BTNode {
     	return 1 + leftHeight + rightHeight;
     }
     
-    public static boolean isBalanced(BTNode treeRoot) {
-        // determine if the tree is superbalanced
-    	// A tree is "superbalanced" if 
-    	//  the difference between the depths of any two leaf nodes is no greater than one.
-    	if(treeRoot == null) return true;
-    	
-    	int leftDepth = 0;
-    	int rightDepth = 0;
-    	
-    	if(treeRoot.left != null) {
-    		leftDepth = countDepth(treeRoot.left);
-    	}
-    	
-    	if(treeRoot.right != null) {
-    		rightDepth = countDepth(treeRoot.right);
-    	}
-
-    	if(Math.abs(leftDepth - rightDepth) <= 1) {
-    		return true;
-    	}
-    	
-        return false;
+    public static boolean isBinarySearchTree(BTNode root) {
+        return isBinarySearchTree(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-	public boolean checkVal(Integer min, Integer max) {
-		if(this == null)  return true;
-		
-		if(this.value < min || this.value > max) {
-			return false;
-		}
-		
-		return this.left.checkVal(min, this.value - 1) && this.right.checkVal(this.value+1, max);
-	}
+    private static boolean isBinarySearchTree(BTNode root, int lowerBound, int upperBound) {
+        if (root == null) {
+            return true;
+        }
+
+        if (root.value >= upperBound || root.value <= lowerBound) {
+            return false;
+        }
+
+        return isBinarySearchTree(root.left, lowerBound, root.value)
+            && isBinarySearchTree(root.right, root.value, upperBound);
+    }
 }

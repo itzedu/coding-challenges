@@ -15,11 +15,11 @@ public class BSTTester {
         final BTNode root = new BTNode(50);
         final BTNode a = root.insertLeft(30);
         a.insertLeft(20);
-        a.insertRight(25);
+        a.insertRight(40);
         final BTNode b = root.insertRight(80);
         b.insertLeft(70);
         b.insertRight(90);
-        final boolean result = root.checkVal(Integer.MAX_VALUE, Integer.MAX_VALUE);
+        final boolean result = BTNode.isBinarySearchTree(root);
         System.out.println(result);
 	}
 }
