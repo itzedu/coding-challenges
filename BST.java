@@ -8,7 +8,12 @@ public class BST {
 	}
 	
 	public boolean isValid() {
-		return true;
+		BTNode currNode = this.root;
+		if(currNode == null) {
+			return true;
+		}
+		
+		return currNode.checkVal(Integer.MIN_VALUE, Integer.MAX_VALUE);
 	}
 	
 }

@@ -3,7 +3,7 @@ package hackerrank;
 public class BTNode {
     public int value;
     public BTNode left;
-    public BTNode right;
+    public BTNode right;  
 
     public BTNode(int value) {
         this.value = value;
@@ -62,4 +62,14 @@ public class BTNode {
     	
         return false;
     }
+
+	public boolean checkVal(Integer min, Integer max) {
+		if(this == null)  return true;
+		
+		if(this.value < min || this.value > max) {
+			return false;
+		}
+		
+		return this.left.checkVal(min, this.value - 1) && this.right.checkVal(this.value+1, max);
+	}
 }
