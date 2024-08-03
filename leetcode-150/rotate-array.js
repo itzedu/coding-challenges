@@ -4,18 +4,18 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var rotate = function (nums, k) {
-  let result = nums.slice(nums.length - k);
+  k = k % nums.length;
 
-  let loopLimit = k;
-
-  if (k % 2 != 0) {
-    loopLimit = loopLimit + 1;
+  if (nums.length < 2 || k == 0) {
+    return;
   }
 
-  for (let i = 0; i < loopLimit; i++) {
+  let result = nums.slice(nums.length - k);
+
+  for (let i = 0; i < nums.length - k; i++) {
     result.push(nums[i]);
   }
 
-  console.log(result);
-  return result;
+  result.forEach((val) => nums.push(val));
+  nums.splice(0, nums.length / 2);
 };
